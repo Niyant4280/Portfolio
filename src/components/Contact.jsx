@@ -3,97 +3,101 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simulate form submission
-        alert(`Thank you, ${formData.name}! Your message has been sent (simulated).`);
+        alert(`Thank you, ${formData.name}! Your message has been sent.`);
         setFormData({ name: '', email: '', message: '' });
     };
 
     return (
         <section id="contact" className="contact-section">
-            <div className="container">
-                <h2 className="section-title">Get In Touch</h2>
+            <div className="container contact-wrap">
 
-                <div className="contact-container">
-                    <div className="contact-info">
-                        <h3>Let's Talk</h3>
-                        <p>I'm open to new opportunities and collaborations. Feel free to reach out!</p>
-
-                        <div className="info-item">
-                            <span className="icon">📧</span>
-                            <a href="mailto:niyant.sanja@gmail.com">niyant.sanja@gmail.com</a>
-                        </div>
-
-                        <div className="info-item">
-                            <span className="icon">📞</span>
-                            <a href="tel:+918980955790">+91-8980955790</a>
-                        </div>
-
-                        <div className="info-item">
-                            <span className="icon">📍</span>
-                            <span>Gujarat, India</span>
-                        </div>
-
-                        <div className="social-links">
-                            <a href="https://linkedin.com/in/niyant-sanja" target="_blank" rel="noopener noreferrer" className="social-icon" title="LinkedIn">
-                                <FaLinkedin />
-                            </a>
-                            <a href="https://github.com/Niyant4280" target="_blank" rel="noopener noreferrer" className="social-icon" title="GitHub">
-                                <FaGithub />
-                            </a>
-                            <a href="/Niyant_Sanja_23CE127_resume.pdf" className="btn-resume" download="Niyant_Sanja_Resume.pdf">Download Resume</a>
-                        </div>
+                {/* Left: Headline */}
+                <div className="contact-left">
+                    <p className="contact-label">HAVE A PROJECT IN MIND?</p>
+                    <h2 className="contact-headline">
+                        Let's work together and build something <em>amazing</em>.
+                    </h2>
+                    <div className="contact-info-list">
+                        <a href="mailto:niyant.sanja@gmail.com" className="contact-info-item">
+                            <span className="ci-icon">📧</span>
+                            niyant.sanja@gmail.com
+                        </a>
+                        <a href="tel:+918980955790" className="contact-info-item">
+                            <span className="ci-icon">📞</span>
+                            +91-8980955790
+                        </a>
+                        <span className="contact-info-item">
+                            <span className="ci-icon">📍</span>
+                            Gujarat, India
+                        </span>
                     </div>
+                    <div className="contact-socials">
+                        <a href="https://linkedin.com/in/niyant-sanja" target="_blank" rel="noopener noreferrer" className="cs-icon" title="LinkedIn">
+                            <FaLinkedin />
+                        </a>
+                        <a href="https://github.com/Niyant4280" target="_blank" rel="noopener noreferrer" className="cs-icon" title="GitHub">
+                            <FaGithub />
+                        </a>
+                        <a href="/Niyant_Sanja_23CE127_resume.pdf" className="btn" download="Niyant_Sanja_Resume.pdf">
+                            Resume ↓
+                        </a>
+                    </div>
+                </div>
 
-                    <form className="contact-form" onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="name">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
+                {/* Right: Form */}
+                <div className="contact-right glass">
+                    <form onSubmit={handleSubmit}>
+                        <div className="cf-group">
+                            <label>Full Name</label>
+                            <div className="cf-input-wrap">
+                                <span className="cf-input-icon">👤</span>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="John Doe"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
                         </div>
-
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
+                        <div className="cf-group">
+                            <label>Email Address</label>
+                            <div className="cf-input-wrap">
+                                <span className="cf-input-icon">✉</span>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="john@company.com"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
                         </div>
-
-                        <div className="form-group">
-                            <label htmlFor="message">Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="5"
-                                value={formData.message}
-                                onChange={handleChange}
-                                required
-                            ></textarea>
+                        <div className="cf-group">
+                            <label>Your Message</label>
+                            <div className="cf-input-wrap cf-textarea-wrap">
+                                <span className="cf-input-icon">💬</span>
+                                <textarea
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Tell me about your project..."
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
                         </div>
-
-                        <button type="submit" className="btn-submit">Send Message</button>
+                        <button type="submit" className="cf-submit btn btn-primary">
+                            Send Message ✈
+                        </button>
                     </form>
                 </div>
             </div>

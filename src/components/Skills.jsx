@@ -1,102 +1,58 @@
-import { HiCode, HiTerminal, HiLightBulb, HiUserGroup } from 'react-icons/hi';
+import React from 'react';
 import './Skills.css';
 
-const Skills = () => {
-    const skillsData = [
-        {
-            category: 'Languages',
-            icon: <HiCode />,
-            skills: [
-                { name: 'Python', link: null },
-                { name: 'SQL', link: null },
-                { name: 'C++', link: null },
-                { name: 'HTML', link: null },
-                { name: 'CSS', link: null },
-                { name: 'JavaScript', link: null }
-            ]
-        },
-        {
-            category: 'Tools',
-            icon: <HiTerminal />,
-            skills: [
-                { name: 'Jira', link: null },
-                { name: 'Tableau', link: null },
-                { name: 'Power BI', link: null },
-                { name: 'Microsoft Excel', link: null },
-                { name: 'MS Project', link: null },
-                { name: 'IBM Cognos Analytics', link: null }
-            ]
-        },
-        {
-            category: 'Core Competencies',
-            icon: <HiLightBulb />,
-            skills: [
-                { name: 'Data Visualization', link: null },
-                { name: 'Dashboard Development', link: null },
-                { name: 'Requirement Analysis', link: null },
-                { name: 'Database Management', link: null }
-            ]
-        },
-        {
-            category: 'Soft Skills',
-            icon: <HiUserGroup />,
-            skills: [
-                { name: 'Analytical Thinking', link: null },
-                { name: 'Problem Solving', link: null },
-                { name: 'Stakeholder Communication', link: null },
-                { name: 'Team Collaboration', link: null },
-                { name: 'Documentation', link: null },
-                { name: 'Time Management', link: null }
-            ]
-        }
-    ];
+const techStack = [
+    { name: 'Python', emoji: '🐍', color: '#3776AB' },
+    { name: 'SQL', emoji: '🗄️', color: '#f29111' },
+    { name: 'JavaScript', emoji: '⚡', color: '#F7DF1E' },
+    { name: 'HTML', emoji: '🌐', color: '#E34F26' },
+    { name: 'CSS', emoji: '🎨', color: '#264de4' },
+    { name: 'C++', emoji: '⚙️', color: '#00599C' },
+    { name: 'React', emoji: '⚛️', color: '#61DAFB' },
+    { name: 'Firebase', emoji: '🔥', color: '#FFCA28' },
+    { name: 'Power BI', emoji: '📊', color: '#F2C811' },
+    { name: 'Tableau', emoji: '📈', color: '#E97627' },
+    { name: 'Jira', emoji: '🟦', color: '#0052CC' },
+    { name: 'Excel', emoji: '📋', color: '#217346' },
+    { name: 'MS Project', emoji: '🗂️', color: '#217346' },
+    { name: 'IBM Cognos', emoji: '🔵', color: '#0530AD' },
+    { name: 'Data Analysis', emoji: '🔬', color: '#afff00' },
+    { name: 'Dashboards', emoji: '🖥️', color: '#afff00' },
+];
 
-    return (
-        <section id="skills" className="skills-section">
-            <div className="skills-background">
-                <div className="blob blob-1"></div>
-                <div className="blob blob-2"></div>
+const softSkills = [
+    'Analytical Thinking',
+    'Problem Solving',
+    'Stakeholder Communication',
+    'Team Collaboration',
+    'Documentation',
+    'Time Management',
+    'Requirement Analysis',
+    'Risk Management',
+];
+
+const Skills = () => (
+    <section id="skills" className="skills-section">
+        <div className="container">
+            <h2 className="section-title reveal">Technical Skills</h2>
+
+            <div className="bento-grid">
+                {techStack.map((tech, i) => (
+                    <div className="bento-cell glass" key={i} style={{ '--cell-accent': tech.color }}>
+                        <span className="bento-emoji">{tech.emoji}</span>
+                        <span className="bento-name">{tech.name}</span>
+                    </div>
+                ))}
             </div>
 
-            <div className="container">
-                <div className="section-header">
-                    <h2 className="section-title">Technical Skills</h2>
-                    <p className="section-subtitle">A collection of tools and technologies I use to bring ideas to life</p>
-                </div>
-
-                <div className="skills-grid">
-                    {skillsData.map((category, index) => (
-                        <div className="skill-card-wrapper" key={index}>
-                            <div className="skill-card">
-                                <div className="card-header">
-                                    <div className="category-icon">{category.icon}</div>
-                                    <h3 className="skill-category">{category.category}</h3>
-                                </div>
-                                <div className="skill-tags">
-                                    {category.skills.map((skill, skillIndex) => (
-                                        skill.link ? (
-                                            <a
-                                                href={skill.link}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="skill-tag skill-link"
-                                                key={skillIndex}
-                                                title="View Certificate"
-                                            >
-                                                {skill.name} <span className="link-arrow">↗</span>
-                                            </a>
-                                        ) : (
-                                            <span className="skill-tag" key={skillIndex}>{skill.name}</span>
-                                        )
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+            <h3 className="soft-skills-title">Soft Skills & Competencies</h3>
+            <div className="soft-skills-row">
+                {softSkills.map((skill, i) => (
+                    <span key={i} className="soft-badge">{skill}</span>
+                ))}
             </div>
-        </section>
-    );
-};
+        </div>
+    </section>
+);
 
 export default Skills;

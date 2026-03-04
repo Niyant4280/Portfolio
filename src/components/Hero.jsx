@@ -1,30 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Hero.css';
-import profileImg from '../assets/profile.jpg';
+
+const roles = [
+    'Data Analyst',
+    'Project Manager',
+    'Problem Solver',
+    'CS Undergraduate',
+    'Analytics Expert',
+];
 
 const Hero = () => {
+    const [roleIndex, setRoleIndex] = useState(0);
+    const [displayed, setDisplayed] = useState('');
+    const [typing, setTyping] = useState(true);
+    const [charIndex, setCharIndex] = useState(0);
+
+    useEffect(() => {
+        const currentRole = roles[roleIndex];
+        let timeout;
+
+        if (typing) {
+            if (charIndex < currentRole.length) {
+                timeout = setTimeout(() => {
+                    setDisplayed(currentRole.slice(0, charIndex + 1));
+                    setCharIndex(c => c + 1);
+                }, 80);
+            } else {
+                timeout = setTimeout(() => setTyping(false), 1800);
+            }
+        } else {
+            if (charIndex > 0) {
+                timeout = setTimeout(() => {
+                    setDisplayed(currentRole.slice(0, charIndex - 1));
+                    setCharIndex(c => c - 1);
+                }, 45);
+            } else {
+                setRoleIndex(i => (i + 1) % roles.length);
+                setTyping(true);
+            }
+        }
+
+        return () => clearTimeout(timeout);
+    }, [charIndex, typing, roleIndex]);
+
     return (
         <section className="hero" id="hero">
-            <div className="hero-container container">
-                <div className="hero-content">
-                    <p className="hero-greeting">Hello, I'm</p>
-                    <h1 className="hero-name">Niyant Sanja</h1>
-                    <h2 className="hero-role">
-                        Data <span className="highlight">Analytics</span> & <span className="highlight">Project</span> Management
-                    </h2>
-                    <p className="hero-description">
-                        Analytical and detail-oriented Computer Science undergraduate seeking opportunities in Data Analytics and Project Management to support data-driven decisions and deliver impactful solutions.
+            <div className="hero-dot-bg" />
+            <div className="hero-inner container">
+                <div className="hero-card glass">
+                    <span className="hero-greeting">Hi, I am</span>
+                    <h1 className="hero-name glitch-text" data-text="<Niyant/>">
+                        &lt;<span className="hero-name-accent">Niyant</span>/&gt;
+                    </h1>
+                    <div className="hero-typewriter">
+                        <span className="typewriter-prefix">I am a&nbsp;</span>
+                        <span className="typewriter-word">{displayed}</span>
+                        <span className="typewriter-cursor">|</span>
+                    </div>
+                    <p className="hero-desc">
+                        Analytical and detail-oriented Computer Engineering undergraduate
+                        with a passion for <span className="accent-green">Data Analytics</span> and{' '}
+                        <span className="accent-green">Project Management</span> — turning
+                        complex data into clear, actionable insights.
                     </p>
-                    <div className="hero-buttons">
-                        <a href="#projects" className="btn btn-primary">View My Work</a>
+                    <div className="hero-actions">
+                        <a href="#projects" className="btn btn-primary">View Projects</a>
                         <a href="#contact" className="btn btn-outline">Contact Me</a>
                     </div>
                 </div>
-                <div className="hero-image-container">
-                    <div className="hero-blob"></div>
-                    <div className="hero-img-box">
-                        <img src={profileImg} alt="Niyant Sanja" className="hero-img" />
-                    </div>
+                <div className="hero-dot-art" />
+            </div>
+            <div className="hero-scroll-hint">
+                <div className="scroll-mouse">
+                    <div className="scroll-wheel" />
                 </div>
             </div>
         </section>

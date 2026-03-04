@@ -6,8 +6,12 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="container footer-container">
-                <p className="footer-copy">© {year} Niyant Sanja. All rights reserved.</p>
-                <p className="footer-credits">Designed & Built with React</p>
+                <p className="footer-copy">© {year} Niyant Sanja. Strategic Data & Project Solutions.</p>
+                <div className="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Work</a>
+                    <a href="#contact">Contact</a>
+                </div>
             </div>
         </footer>
     );
