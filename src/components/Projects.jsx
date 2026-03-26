@@ -9,7 +9,7 @@ const projects = [
         tech: ['HTML', 'CSS', 'JavaScript', 'Python'],
         github: null,
         demo: 'https://product-management-theta-dusky.vercel.app/',
-        image: 'https://placehold.co/600x340/0a0a0a/afff00?text=Product+Manager',
+        image: 'https://placehold.co/600x340/0a0a0a/00e5ff?text=Product+Manager',
     },
     {
         title: 'Bus Niyojak',
@@ -18,7 +18,7 @@ const projects = [
         tech: ['React', 'Firebase', 'Python'],
         github: null,
         demo: 'https://bus-niyojak.vercel.app/',
-        image: 'https://placehold.co/600x340/0a0a0a/afff00?text=Bus+Niyojak',
+        image: 'https://placehold.co/600x340/0a0a0a/00e5ff?text=Bus+Niyojak',
     },
     {
         title: 'CivicTrack',
@@ -27,7 +27,7 @@ const projects = [
         tech: ['MERN Stack', 'Geolocation', 'Tailwind CSS'],
         github: null,
         demo: 'https://sgp-4-civic-track-daru-six.vercel.app/',
-        image: 'https://placehold.co/600x340/0a0a0a/afff00?text=CivicTrack',
+        image: 'https://placehold.co/600x340/0a0a0a/00e5ff?text=CivicTrack',
     },
     {
         title: 'DineSpot',
@@ -36,7 +36,7 @@ const projects = [
         tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
         github: null,
         demo: 'https://dinespot-zeta.vercel.app/',
-        image: 'https://placehold.co/600x340/0a0a0a/afff00?text=DineSpot',
+        image: 'https://placehold.co/600x340/0a0a0a/00e5ff?text=DineSpot',
     },
     {
         title: "King's Kraft",
@@ -45,7 +45,7 @@ const projects = [
         tech: ['Flutter', 'Node.js', 'Express', 'Firebase'],
         github: null,
         demo: null,
-        image: 'https://placehold.co/600x340/0a0a0a/afff00?text=Kings+Kraft',
+        image: 'https://placehold.co/600x340/0a0a0a/00e5ff?text=Kings+Kraft',
     },
 ];
 

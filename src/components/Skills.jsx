@@ -16,8 +16,8 @@ const techStack = [
     { name: 'Excel', emoji: '📋', color: '#217346' },
     { name: 'MS Project', emoji: '🗂️', color: '#217346' },
     { name: 'IBM Cognos', emoji: '🔵', color: '#0530AD' },
-    { name: 'Data Analysis', emoji: '🔬', color: '#afff00' },
-    { name: 'Dashboards', emoji: '🖥️', color: '#afff00' },
+    { name: 'Data Analysis', emoji: '🔬', color: '#00e5ff' },
+    { name: 'Dashboards', emoji: '🖥️', color: '#00e5ff' },
 ];
 
 const softSkills = [

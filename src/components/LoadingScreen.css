@@ -46,7 +46,7 @@
 }
 
 .loader-text {
-    color: #afff00;
+    color: #00e5ff;
     text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
 }
 
@@ -64,7 +64,7 @@
 
 .loader-bar {
     height: 100%;
-    background: linear-gradient(90deg, #afff00, #d4ff70);
+    background: linear-gradient(90deg, #00e5ff, #7df9ff);
     border-radius: 100px;
     transition: width 0.08s linear;
     box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
@@ -73,7 +73,7 @@
 .loader-percent {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.2rem;
-    color: #afff00;
+    color: #00e5ff;
     margin: 0;
     letter-spacing: 2px;
 }
@@ -107,7 +107,7 @@
 .walker-head {
     width: 18px;
     height: 18px;
-    background: #afff00;
+    background: #00e5ff;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
 }
@@ -115,7 +115,7 @@
 .walker-torso {
     width: 4px;
     height: 22px;
-    background: #afff00;
+    background: #00e5ff;
     margin: 2px 0;
 }
 
@@ -127,7 +127,7 @@
 .walker-leg {
     width: 4px;
     height: 16px;
-    background: #afff00;
+    background: #00e5ff;
     border-radius: 2px;
     transform-origin: top center;
 }
