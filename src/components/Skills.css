@@ -91,7 +91,7 @@
     padding: 0.5rem 1.1rem;
     border-radius: 100px;
     background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(175, 255, 0, 0.15);
+    border: 1px solid rgba(0, 229, 255, 0.15);
     color: var(--text-secondary);
     font-weight: 500;
     font-family: var(--font-main);
@@ -99,7 +99,7 @@
 }
 
 .soft-badge:hover {
-    background: rgba(175, 255, 0, 0.08);
+    background: rgba(0, 229, 255, 0.08);
     color: var(--accent-color);
     border-color: var(--accent-color);
 }

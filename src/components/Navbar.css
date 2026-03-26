@@ -16,7 +16,7 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 100px;
     padding: 0.6rem 0.8rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(175, 255, 0, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 229, 255, 0.05);
 }
 
 .dock-item {

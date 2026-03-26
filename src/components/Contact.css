@@ -126,7 +126,7 @@ a.contact-info-item:hover {
 
 .cf-input-wrap:focus-within {
     border-color: var(--accent-color);
-    background: rgba(175, 255, 0, 0.04);
+    background: rgba(0, 229, 255, 0.04);
 }
 
 .cf-input-icon {

@@ -17,7 +17,7 @@
 .loader-bg-dots {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(175, 255, 0, 0.15) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(0, 229, 255, 0.15) 1px, transparent 1px);
     background-size: 32px 32px;
     pointer-events: none;
     mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
@@ -42,16 +42,16 @@
 }
 
 .loader-lt {
-    color: rgba(175, 255, 0, 0.5);
+    color: rgba(0, 229, 255, 0.5);
 }
 
 .loader-text {
     color: #afff00;
-    text-shadow: 0 0 20px rgba(175, 255, 0, 0.6);
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
 }
 
 .loader-slash {
-    color: rgba(175, 255, 0, 0.5);
+    color: rgba(0, 229, 255, 0.5);
 }
 
 .loader-bar-wrap {
@@ -67,7 +67,7 @@
     background: linear-gradient(90deg, #afff00, #d4ff70);
     border-radius: 100px;
     transition: width 0.08s linear;
-    box-shadow: 0 0 10px rgba(175, 255, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
 }
 
 .loader-percent {
@@ -109,7 +109,7 @@
     height: 18px;
     background: #afff00;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(175, 255, 0, 0.6);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
 }
 
 .walker-torso {
