@@ -3,10 +3,10 @@ import './Hero.css';
 
 const roles = [
     'Data Analyst',
-    'Project Manager',
+    'PM Enthusiast',
     'Problem Solver',
     'CS Undergraduate',
-    'Analytics Expert',
+    'Analytics Explorer',
 ];
 
 const Hero = () => {
@@ -59,9 +59,9 @@ const Hero = () => {
                     </div>
                     <p className="hero-desc">
                         Analytical and detail-oriented Computer Engineering undergraduate
-                        with a passion for <span className="accent-green">Data Analytics</span> and{' '}
-                        <span className="accent-green">Project Management</span> — turning
-                        complex data into clear, actionable insights.
+                        passionate about <span className="accent-green">Data Analytics</span> and
+                        deeply interested in <span className="accent-green">Project Management</span> — eager
+                        to turn complex data into clear, actionable insights.
                     </p>
                     <div className="hero-actions">
                         <a href="#projects" className="btn btn-primary">View Projects</a>

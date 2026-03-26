@@ -46,6 +46,24 @@ const achievements = [
         emoji: '🤖',
         link: 'https://coursera.org/share/517207057c17e7e8aa15b028a28fc3e3',
     },
+    {
+        text: 'Google Data Analytics Specialization — Coursera',
+        category: 'Certification',
+        emoji: '📈',
+        link: 'https://coursera.org/share/c1f2a90aedb1554f644b7e89818b3dc7',
+    },
+    {
+        text: 'AWS Cloud Practitioner Essentials — Coursera',
+        category: 'Certification',
+        emoji: '☁️',
+        link: 'https://coursera.org/share/fbb9e0d279095dc063bee3e88393841f',
+    },
+    {
+        text: 'AWS Academy Cloud Developing',
+        category: 'Certification',
+        emoji: '🛠️',
+        link: 'https://lnkd.in/d-twSzT4',
+    },
 ];
 
 const Achievements = () => {
