@@ -26,21 +26,25 @@ const achievements = [
         text: 'Google Project Management Specialization — Coursera',
         category: 'Certification',
         emoji: '🗂️',
+        link: 'https://coursera.org/share/954e550bf540f98cb845a773d2fa8b44',
     },
     {
         text: 'IBM Data Analyst Specialization — Coursera',
         category: 'Certification',
         emoji: '📊',
+        link: 'https://coursera.org/share/508073b07fbaeff9ae658e126955e3fc',
     },
     {
         text: 'Exploratory Data Analysis for Machine Learning — IBM (Coursera)',
         category: 'Certification',
         emoji: '🔬',
+        link: 'https://coursera.org/share/843558e44b5ba48da6b4c3f036c5d647',
     },
     {
         text: 'Deep Learning and Reinforcement Learning — IBM (Coursera)',
         category: 'Certification',
         emoji: '🤖',
+        link: 'https://coursera.org/share/517207057c17e7e8aa15b028a28fc3e3',
     },
 ];
 
@@ -59,11 +63,17 @@ const Achievements = () => {
                 <p className="section-subtitle-sm">Certifications, awards, and recognition</p>
 
                 <div className="carousel-wrapper">
-                    <div className="carousel-main glass">
+                    <div 
+                        className={`carousel-main glass ${ach.link ? 'clickable' : ''}`}
+                        onClick={() => ach.link && window.open(ach.link, '_blank')}
+                    >
                         <div className="carousel-icon-box">{ach.emoji}</div>
                         <div className="carousel-body">
                             <span className="carousel-badge">{ach.category}</span>
-                            <p className="carousel-text">{ach.text}</p>
+                            <p className="carousel-text">
+                                {ach.text}
+                                {ach.link && <span className="link-icon">↗</span>}
+                            </p>
                         </div>
                     </div>
 
@@ -92,10 +102,16 @@ const Achievements = () => {
                         <div
                             key={i}
                             className={`ach-item glass ${i === current ? 'ach-active' : ''}`}
-                            onClick={() => setCurrent(i)}
+                            onClick={() => {
+                                setCurrent(i);
+                                if (a.link) window.open(a.link, '_blank');
+                            }}
                         >
                             <span className="ach-emoji">{a.emoji}</span>
-                            <p className="ach-text">{a.text}</p>
+                            <p className="ach-text">
+                                {a.text}
+                                {a.link && <span className="link-icon">↗</span>}
+                            </p>
                         </div>
                     ))}
                 </div>

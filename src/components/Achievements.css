@@ -190,6 +190,31 @@
     color: #fff;
 }
 
+.carousel-main.clickable {
+    cursor: pointer;
+}
+
+.carousel-main.clickable:hover {
+    border-color: var(--accent-color);
+    background: rgba(175, 255, 0, 0.04);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.link-icon {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.85em;
+    color: var(--accent-color);
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ach-item:hover .link-icon,
+.carousel-main.clickable:hover .link-icon {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
 @media (max-width: 768px) {
     .carousel-main {
         flex-direction: column;
