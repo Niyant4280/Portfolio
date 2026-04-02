@@ -64,6 +64,12 @@ const achievements = [
         emoji: '🛠️',
         link: 'https://lnkd.in/d-twSzT4',
     },
+    {
+        text: 'IBM Business Intelligence (BI) Analyst — Coursera',
+        category: 'Certification',
+        emoji: '📈',
+        link: 'https://coursera.org/share/86183d917f449cb563c2b113cc4b799d',
+    },
 ];
 
 const Achievements = () => {
