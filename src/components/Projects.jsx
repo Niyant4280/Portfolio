@@ -3,6 +3,15 @@ import './Projects.css';
 
 const projects = [
     {
+        title: 'Currency Crisis Early Warning System (EWS)',
+        role: 'Institutional Risk Platform | 2026',
+        desc: 'An institutional-grade macroeconomic risk platform monitoring 35 emerging economies. Built on a weighted Z-score model calibrated against 10 years of historical data, generating live Stress Scores (0–100) with automated risk tiering.',
+        tech: ['React', 'Python', 'Flask', 'MongoDB', 'Three.js', 'Pandas', 'Framer Motion'],
+        github: null,
+        demo: 'https://currency-crisis.vercel.app/',
+        image: '/projects/currency-crisis.png',
+    },
+    {
         title: 'Product Manager',
         role: 'Internship Project | 2025',
         desc: 'A full-featured product management platform with interactive dashboards, analytics, and real-time database tracking.',

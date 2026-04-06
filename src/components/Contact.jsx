@@ -28,10 +28,6 @@ const Contact = () => {
                             <span className="ci-icon">📧</span>
                             niyant.sanja@gmail.com
                         </a>
-                        <a href="tel:+918980955790" className="contact-info-item">
-                            <span className="ci-icon">📞</span>
-                            +91-8980955790
-                        </a>
                         <span className="contact-info-item">
                             <span className="ci-icon">📍</span>
                             Gujarat, India
