@@ -9,7 +9,7 @@ const projects = [
         tech: ['React', 'Flask', 'MongoDB', 'WebSockets', 'SendGrid', 'Tailwind CSS'],
         github: null,
         demo: 'https://symptom-anomaly-detector.vercel.app/',
-        image: '/projects/symptom-anomaly-detector.png',
+        image: 'https://placehold.co/600x340/0a0a0a/00e5ff?text=Symptom+Anomaly+Detector',
     },
     {
         title: 'Currency Crisis Early Warning System (EWS)',
@@ -18,7 +18,7 @@ const projects = [
         tech: ['React', 'Python', 'Flask', 'MongoDB', 'Three.js', 'Pandas', 'Framer Motion'],
         github: null,
         demo: 'https://currency-crisis.vercel.app/',
-        image: '/projects/currency-crisis.png',
+        image: 'https://placehold.co/600x340/0a0a0a/00e5ff?text=Currency+Crisis',
     },
     {
         title: 'Product Manager',
