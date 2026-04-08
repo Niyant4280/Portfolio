@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import CursorSpotlight from './components/CursorSpotlight';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
+import VisitorTracker from './components/VisitorTracker';
 import useScrollReveal from './hooks/useScrollReveal';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <>
+      <VisitorTracker />
       <CursorSpotlight />
       <ScrollProgress />
       <BackToTop />

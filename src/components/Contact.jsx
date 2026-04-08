@@ -4,13 +4,53 @@ import './Contact.css';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState(null); // 'success', 'error', or null
 
     const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(`Thank you, ${formData.name}! Your message has been sent.`);
-        setFormData({ name: '', email: '', message: '' });
+        setIsSubmitting(true);
+        setStatus(null);
+
+        const scriptURL = import.meta.env.VITE_GOOGLE_SHEET_URL;
+
+        if (!scriptURL) {
+            console.error('Google Sheet URL is missing in .env');
+            setStatus('error');
+            setIsSubmitting(false);
+            return;
+        }
+
+        try {
+            // Building URL with query parameters for a GET request (most reliable for Apps Script)
+            const params = new URLSearchParams();
+            params.append('name', formData.name.trim());
+            params.append('email', formData.email.trim());
+            params.append('message', formData.message.trim());
+
+            const finalURL = `${scriptURL}${scriptURL.includes('?') ? '&' : '?'}${params.toString()}`;
+
+            console.log("Using Bulletproof GET method to:", finalURL);
+
+            await fetch(finalURL, {
+                method: 'GET',
+                mode: 'no-cors', // Bypasses CORS and complex POST redirects
+            });
+
+            // With no-cors, we assume success if no error is thrown
+            setStatus('success');
+            setFormData({ name: '', email: '', message: '' });
+            
+            // Clear success message after 5 seconds
+            setTimeout(() => setStatus(null), 5000);
+        } catch (error) {
+            console.error('Submission error:', error);
+            setStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -60,6 +100,7 @@ const Contact = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
+                                    disabled={isSubmitting}
                                 />
                             </div>
                         </div>
@@ -74,6 +115,7 @@ const Contact = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
+                                    disabled={isSubmitting}
                                 />
                             </div>
                         </div>
@@ -88,12 +130,35 @@ const Contact = () => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
+                                    disabled={isSubmitting}
                                 />
                             </div>
                         </div>
-                        <button type="submit" className="cf-submit btn btn-primary">
-                            Send Message ✈
+                        <button 
+                            type="submit" 
+                            className="cf-submit btn btn-primary"
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting ? (
+                                <>Sending... ⏳</>
+                            ) : (
+                                <>Send Message ✈</>
+                            )}
                         </button>
+
+                        {/* Status Messages */}
+                        {status === 'success' && (
+                            <div className="cf-status success">
+                                <span>✅</span>
+                                <span>Message sent! I'll get back to you soon.</span>
+                            </div>
+                        )}
+                        {status === 'error' && (
+                            <div className="cf-status error">
+                                <span>❌</span>
+                                <span>Something went wrong. Please try again or email me directly.</span>
+                            </div>
+                        )}
                     </form>
                 </div>
             </div>

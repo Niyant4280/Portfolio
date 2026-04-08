@@ -168,6 +168,48 @@ a.contact-info-item:hover {
     padding: 1rem;
     font-size: 1rem;
     border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.cf-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(0.5);
+}
+
+/* Submission Feedback */
+.cf-status {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    text-align: center;
+    animation: fadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.cf-status.success {
+    background: rgba(0, 255, 127, 0.08);
+    color: #00ff7f;
+    border: 1px solid rgba(0, 255, 127, 0.2);
+}
+
+.cf-status.error {
+    background: rgba(255, 69, 58, 0.08);
+    color: #ff453a;
+    border: 1px solid rgba(255, 69, 58, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 900px) {

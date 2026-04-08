@@ -3,6 +3,11 @@ import './Achievements.css';
 
 const achievements = [
     {
+        text: 'Data Analytics Internship Certificate — Skillfied Mentor',
+        category: 'Internship',
+        emoji: '🎓',
+    },
+    {
         text: 'Elite Certification from NPTEL in Data Structures and Algorithms using Java',
         category: 'Certification',
         emoji: '🏆',
