@@ -3,7 +3,7 @@ import './Hero.css';
 
 const roles = [
     'Data Analyst',
-    'PM Enthusiast',
+    'Project Management Enthusiast',
     'Problem Solver',
     'CS Undergraduate',
     'Analytics Explorer',
