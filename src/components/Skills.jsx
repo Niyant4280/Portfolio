@@ -38,7 +38,7 @@ const Skills = () => (
 
             <div className="bento-grid">
                 {techStack.map((tech, i) => (
-                    <div className="bento-cell glass" key={i} style={{ '--cell-accent': tech.color }}>
+                    <div className={`bento-cell glass reveal reveal-fly reveal-delay-${(i % 5) + 1}`} key={i} style={{ '--cell-accent': tech.color }}>
                         <span className="bento-emoji">{tech.emoji}</span>
                         <span className="bento-name">{tech.name}</span>
                     </div>
@@ -48,7 +48,7 @@ const Skills = () => (
             <h3 className="soft-skills-title">Soft Skills & Competencies</h3>
             <div className="soft-skills-row">
                 {softSkills.map((skill, i) => (
-                    <span key={i} className="soft-badge">{skill}</span>
+                    <span key={i} className={`soft-badge reveal reveal-delay-${(i % 5) + 1}`}>{skill}</span>
                 ))}
             </div>
         </div>

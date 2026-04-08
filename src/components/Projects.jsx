@@ -73,7 +73,7 @@ const Projects = () => (
             <h2 className="section-title">Projects</h2>
             <div className="projects-grid">
                 {projects.map((p, i) => (
-                    <div className="proj-card glass" key={i}>
+                    <div className={`proj-card glass reveal reveal-fly reveal-delay-${(i % 3) + 1}`} key={i}>
                         <div className="proj-img">
                             <img src={p.image} alt={p.title} />
                         </div>

@@ -47,7 +47,7 @@ const Hero = () => {
         <section className="hero" id="hero">
             <div className="hero-dot-bg" />
             <div className="hero-inner container">
-                <div className="hero-card glass">
+                <div className="hero-card glass floating">
                     <span className="hero-greeting">Hi, I am</span>
                     <h1 className="hero-name glitch-text" data-text="<Niyant/>">
                         &lt;<span className="hero-name-accent">Niyant</span>/&gt;
