@@ -3,6 +3,15 @@ import './Projects.css';
 
 const projects = [
     {
+        title: 'National Bio-Surveillance & Symptom Anomaly Detector',
+        role: 'Public Health Intelligence Platform | 2026',
+        desc: 'An enterprise-grade early warning system designed to detect, track, and alert health officials of emerging disease outbreaks using real-time open-source intelligence (OSINT) and statistical modeling.',
+        tech: ['React', 'Flask', 'MongoDB', 'WebSockets', 'SendGrid', 'Tailwind CSS'],
+        github: null,
+        demo: 'https://symptom-anomaly-detector.vercel.app/',
+        image: '/projects/symptom-anomaly-detector.png',
+    },
+    {
         title: 'Currency Crisis Early Warning System (EWS)',
         role: 'Institutional Risk Platform | 2026',
         desc: 'An institutional-grade macroeconomic risk platform monitoring 35 emerging economies. Built on a weighted Z-score model calibrated against 10 years of historical data, generating live Stress Scores (0–100) with automated risk tiering.',
