@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import './StatsCounter.css';
 
 const stats = [
-    { value: 5, suffix: '+', label: 'Projects Completed', icon: '🗂️' },
-    { value: 8, suffix: '+', label: 'Certifications', icon: '🏆' },
+    { value: 7, suffix: '+', label: 'Projects Completed', icon: '🗂️' },
+    { value: 12, suffix: '+', label: 'Certifications', icon: '🏆' },
     { value: 8.28, suffix: '', label: 'University CGPA', icon: '🎓', decimal: true },
-    { value: 1, suffix: '', label: 'Industry Internship', icon: '💼' },
+    { value: 2, suffix: '', label: 'Industry Internships', icon: '💼' },
 ];
 
 const useCountUp = (target, duration = 1800, active, decimal = false) => {
