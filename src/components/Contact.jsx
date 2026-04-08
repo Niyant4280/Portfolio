@@ -80,7 +80,7 @@ const Contact = () => {
                         <a href="https://github.com/Niyant4280" target="_blank" rel="noopener noreferrer" className="cs-icon" title="GitHub">
                             <FaGithub />
                         </a>
-                        <a href="/Niyant_Sanja_23CE127_resume.pdf" className="btn" download="Niyant_Sanja_Resume.pdf">
+                        <a href="/Niyant_Sanja_Resume_Final.pdf" className="btn" download="Niyant_Sanja_Resume.pdf">
                             Resume ↓
                         </a>
                     </div>
