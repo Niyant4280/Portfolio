@@ -75,7 +75,6 @@ const Projects = () => (
                 {projects.map((p, i) => (
                     <div className={`proj-card-wrapper reveal reveal-fly reveal-delay-${(i % 3) + 1}`} key={i}>
                         <div className="proj-card-inner glass">
-                            <div className="proj-bg-image" style={{ backgroundImage: `url(${p.image})` }}></div>
                             <div className="proj-bg-noise"></div>
                             
                             <div className="proj-top">
