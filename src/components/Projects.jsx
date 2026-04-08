@@ -73,32 +73,45 @@ const Projects = () => (
             <h2 className="section-title">Projects</h2>
             <div className="projects-grid">
                 {projects.map((p, i) => (
-                    <div className={`proj-card glass reveal reveal-fly reveal-delay-${(i % 3) + 1}`} key={i}>
-                        <div className="proj-img">
-                            <img src={p.image} alt={p.title} />
-                        </div>
-                        <div className="proj-body">
-                            <h3 className="proj-title">{p.title}</h3>
-                            <p className="proj-role">{p.role}</p>
-                            <p className="proj-desc">{p.desc}</p>
-                            <div className="proj-tech">
-                                {p.tech.map(t => <span key={t} className="proj-badge">{t}</span>)}
+                    <div className={`proj-card-wrapper reveal reveal-fly reveal-delay-${(i % 3) + 1}`} key={i}>
+                        <div className="proj-card-inner glass">
+                            <div className="proj-bg-image" style={{ backgroundImage: `url(${p.image})` }}></div>
+                            <div className="proj-bg-noise"></div>
+                            
+                            <div className="proj-top">
+                                <span className="proj-category">{p.role.split('|')[0].trim()}</span>
+                                <a href={p.demo || p.github || '#'} target="_blank" rel="noopener noreferrer" className="proj-arrow-link" aria-label="Visit Project">
+                                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="square" strokeLinejoin="miter"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </a>
                             </div>
-                        </div>
-                        <div className="proj-actions">
-                            {p.github && (
-                                <a href={p.github} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-gh">
-                                    GitHub ↗
-                                </a>
-                            )}
-                            {p.demo && (
-                                <a href={p.demo} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-demo">
-                                    Live Demo ↗
-                                </a>
-                            )}
-                            {!p.demo && !p.github && (
-                                <span className="proj-btn proj-btn-na">Coming Soon</span>
-                            )}
+                            
+                            <div className="proj-bottom">
+                                <h3 className="proj-title-min">{p.title}</h3>
+                            </div>
+
+                            <div className="proj-hover-overlay">
+                                <div className="proj-hover-content">
+                                    <p className="proj-desc">{p.desc}</p>
+                                    <div className="proj-tech">
+                                        {p.tech.map(t => <span key={t} className="proj-badge">{t}</span>)}
+                                    </div>
+                                    <div className="proj-actions">
+                                        {p.github && (
+                                            <a href={p.github} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-gh">
+                                                GitHub ↗
+                                            </a>
+                                        )}
+                                        {p.demo && (
+                                            <a href={p.demo} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-demo">
+                                                Live Demo ↗
+                                            </a>
+                                        )}
+                                        {!p.demo && !p.github && (
+                                            <span className="proj-btn proj-btn-na">Coming Soon</span>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 ))}
